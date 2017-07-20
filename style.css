@@ -1,0 +1,32 @@
+*{padding:0;margin:0;box-sizing:border-box;}
+body{
+    background-color: #fff;
+}
+canvas{
+    display: block;
+}
+.icons{
+    width:100%;
+    position: fixed;
+    display: flex;
+    justify-content: space-around;
+    background-color: #fff;
+}
+svg{
+    width:30px;
+    height:30px;
+    display: block;
+}
+.active > .pen{
+    width:40px;
+    height:40px;
+    display: block;
+    transition-timing-function:linear;
+    border:none;
+}
+.active > .eraser{
+    width:40px;
+    height:40px;
+    display: block;
+    border:none;
+}
