@@ -38,8 +38,6 @@ function painting(e) {
 
 function eraser(e) {
     e.preventDefault();
-    var pageX = e.touches[0].pageX;
-    var pageY = e.touches[0].pageY;
 }
 $(myCanvas).on('touchstart', start1);
 $(myCanvas).on('touchmove', painting);
@@ -76,10 +74,7 @@ $('.eraser').on('click',function(){
 $('.icons').on('touchmove',function(e){
     e.originalEvent.preventDefault();
 });
-$('qingkong').on('click',function(e){
-    e.originalEvent.preventDefault();
-})
-$('.qingkong').on('touchstart',function(e){
+$('.qingkong').on('click',function(){
     canvasText.clearRect(0,0,myCanvas.width,myCanvas.height);
     $('.eraser').parent().removeClass('active');
     $('.pen').parent().addClass('active');
@@ -88,12 +83,9 @@ $('.qingkong').on('touchstart',function(e){
     $(myCanvas).off('touchstart',start2);
     $(myCanvas).off('touchmove', eraseing);
 });
-$('.camera').on('touchstart',function(e){
+$('.camera').on('click',function(e){
     e.originalEvent.preventDefault();
-    var d = myCanvas.toDataURL('image/png');
+    var data = myCanvas.toDataURL('image/png');
     var w=window.open('about:blank','image from canvas');
-    w.document.write("<img src='"+d+"' alt='from canvas'/>");
-})
-$('.camera').on('touchmove',function(e){
-    e.originalEvent.preventDefault();
+    w.document.write("<img src='"+data+"' alt='from canvas'/>");
 })
