@@ -1,4 +1,8 @@
 *{padding:0;margin:0;box-sizing:border-box;}
+html{
+    touch-action: manipulation;
+}
+
 body{
     background-color: #fff;
 }

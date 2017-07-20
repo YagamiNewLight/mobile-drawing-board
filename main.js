@@ -74,10 +74,12 @@ $('.eraser').on('click',function(){
     $(myCanvas).off('touchmove', painting);
 });
 $('.icons').on('touchmove',function(e){
-    console.log(1);
     e.preventDefault();
 });
-$('.qingkong').on('touchstart',function(){
+$('qingkong').on('click',function(e){
+    e.preventDefault();
+})
+$('.qingkong').on('touchstart',function(e){
     canvasText.clearRect(0,0,myCanvas.width,myCanvas.height);
     $('.eraser').parent().removeClass('active');
     $('.pen').parent().addClass('active');
@@ -87,7 +89,6 @@ $('.qingkong').on('touchstart',function(){
     $(myCanvas).off('touchmove', eraseing);
 });
 $('.camera').on('touchstart',function(){
-    console.log(1);
     var d = myCanvas.toDataURL('image/png');
     var w=window.open('about:blank','image from canvas');
     w.document.write("<img src='"+d+"' alt='from canvas'/>");
